@@ -24,7 +24,7 @@ node index.js
 
 #### poc contract address
 
-An Address of the test std_reference_basic on the testnet Tequila-0004: [terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9](https://finder.terra.money/tequila-0004/address/terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9)
+An Address of the poc std_reference_basic on the testnet Tequila-0004: [terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9](https://finder.terra.money/tequila-0004/address/terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9)
 
 ## Handle Message
 
