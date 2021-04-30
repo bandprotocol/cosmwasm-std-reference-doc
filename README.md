@@ -24,7 +24,7 @@ For the ease of development, the Band Foundation will be maintaining and updatin
 
 ## Retrieving the Price Data
 
-The code below shows an example of a relatively [simple price database](xxx) contract on Terra which retrieve price data from Band's [std_reference_proxy](https://finder.terra.money/tequila-0004/address/terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9) contract and store it in the contract's state.
+The code below shows an example of a relatively [simple price database](https://finder.terra.money/tequila-0004/address/terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0) contract on Terra which retrieve price data from Band's [std_reference_proxy](https://finder.terra.money/tequila-0004/address/terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9) contract and store it in the contract's state.
 
 ```shell=
 ===================
@@ -72,20 +72,14 @@ The `set_single` function will simply calling `get_reference_data` from `std_ref
 
 The `set_multiple` function converts the input into an array of base symbol and quote symbol arrays. After that it will call `get_reference_data_bulk` from `std_reference_proxy` with base symbols and quote symbols. It then extract the exchange rates from the results and save all of them to the state.
 
-The full source code for the `SimplePriceDB` contract can be found [in this repo](xxx) along with the JSON for sending the `set_proxy`, `set_single`, `set_multiple`. The score itself is also deployed to the testnet at address [xxx](xxx).
+The full source code for the `SimplePriceDB` contract can be found [here](./simple_price_db) along with the JSON for sending the `set_proxy`, `set_single`, `set_multiple`. The score itself is also deployed to the testnet at address [terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0](https://finder.terra.money/tequila-0004/address/terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0).
 
 ## List of Band oracle contracts on Terra networks.
 
-### Testnet
+### Testnet Tequila-0004
 
 | Contract            |                   Address                    |
 | ------------------- | :------------------------------------------: |
 | std_reference       | terra1vvnnz5g25s04m9tnv8mx9qxxhetsutjl72vpls |
 | std_reference_proxy | terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9 |
-
-### Mainnet
-
-| Contract            | Address |
-| ------------------- | :-----: |
-| std_reference       |   xxx   |
-| std_reference_proxy |   xxx   |
+| simple_price_db     | terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0 |

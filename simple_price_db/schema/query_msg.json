@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "anyOf": [
+    {
+      "type": "object",
+      "required": [
+        "owner"
+      ],
+      "properties": {
+        "owner": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "oracle_ref"
+      ],
+      "properties": {
+        "oracle_ref": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "get_price"
+      ],
+      "properties": {
+        "get_price": {
+          "type": "object",
+          "required": [
+            "symbol"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

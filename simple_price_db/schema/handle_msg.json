@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HandleMsg",
+  "anyOf": [
+    {
+      "type": "object",
+      "required": [
+        "set_oracle_ref"
+      ],
+      "properties": {
+        "set_oracle_ref": {
+          "type": "object",
+          "required": [
+            "new_oracle_ref"
+          ],
+          "properties": {
+            "new_oracle_ref": {
+              "$ref": "#/definitions/HumanAddr"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "save_price"
+      ],
+      "properties": {
+        "save_price": {
+          "type": "object",
+          "required": [
+            "symbol"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "HumanAddr": {
+      "type": "string"
+    }
+  }
+}
