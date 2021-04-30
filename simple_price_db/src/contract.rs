@@ -114,7 +114,7 @@ fn query_price<S: Storage, A: Api, Q: Querier>(
     }
 }
 
-// internal cross-contract query
+// cross-contract query
 fn query_reference_data<S: Storage, A: Api, Q: Querier>(
     deps: &Extern<S, A, Q>,
     base_symbol: String,

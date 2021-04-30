@@ -8,6 +8,8 @@ In addition to data native to the [CosmWasm blockchain](https://docs.cosmwasm.co
 
 The price data originates from [data requests](https://github.com/bandprotocol/bandchain/wiki/System-Overview#oracle-data-request) made on BandChain and then sent to Band's [std_reference_basic](https://finder.terra.money/tequila-0004/address/terra1vvnnz5g25s04m9tnv8mx9qxxhetsutjl72vpls) contract on Terra then retrieves and stores the results of those requests. Specifically, the following price pairs are available to be read from the [std_reference_proxy](https://finder.terra.money/tequila-0004/address/terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9) contract:
 
+For example
+
 - AAPL/USD
 - GOOGL/USD
 - TSLA/USD
@@ -95,7 +97,7 @@ pub enum QueryMsg {
 }
 ```
 
-The `QueryExtMsg` is used only when a call is made across a contract, which is an internal call only. This message only have 1 sub message `GetReferenceData`. `GetReferenceData` is used while trying to get a price from the oracle/[std_reference_proxy](https://finder.terra.money/tequila-0004/address/terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9).
+The `QueryExtMsg` is used only when a call is made across a contract, which arises internally and is not caused by a direct call. This message only have 1 sub message `GetReferenceData`. `GetReferenceData` is used while trying to get a price from the oracle/[std_reference_proxy](https://finder.terra.money/tequila-0004/address/terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9).
 
 ```rust
 pub enum QueryExtMsg {
@@ -132,7 +134,7 @@ pub struct ReferenceData {
 
 The full code of contract logic is [here](./simple_price_db/src/contract.rs).
 
-The contract logic can be divided into 4 parts which are `init`, `query`, `internal cross-contrct query` and `handle`.
+The contract logic can be divided into 4 parts which are `init`, `query`, `cross-contrct query` and `handle`.
 
 The `init` part is only used at the contract initialization step. It basically set the owner of the contract and then set the reference of the oracle.
 
@@ -179,10 +181,10 @@ fn query_price<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-The `internal cross-contrct query` is only used when handle the message `SavePrice`. It basically send a query message `GetReferenceData` to the oracle contract and then return the struct `ReferenceData`.
+The `cross-contrct query` is only used when handle the message `SavePrice`. It basically send a query message `GetReferenceData` to the oracle contract and then return the struct `ReferenceData`.
 
 ```rust
-// internal cross-contract query
+// cross-contract query
 fn query_reference_data<S: Storage, A: Api, Q: Querier>(
     deps: &Extern<S, A, Q>,
     base_symbol: String,
