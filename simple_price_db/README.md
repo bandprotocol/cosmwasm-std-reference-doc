@@ -2,7 +2,7 @@
 
 An Address on the testnet Tequila-0004: [terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0](https://finder.terra.money/tequila-0004/address/terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0)
 
-### Handing Messages
+## Handing Messages
 
 #### Set Oracle
 
@@ -16,7 +16,7 @@ terracli tx wasm execute terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0 "{\"set_or
 terracli tx wasm execute terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0 "{\"save_price\":{\"symbol\": \"AAPL\" }}" --gas auto --gas-prices 1.8ukrw --gas-adjustment 1.4 --chain-id tequila-0004 --node tcp://15.164.0.235:26657 --from <OWNER_ACCOUNT>
 ```
 
-### Query Messages
+## Query Messages
 
 #### Query Owner
 
