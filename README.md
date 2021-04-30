@@ -42,11 +42,11 @@ The code below shows an example of a relatively [simple price database](https://
  |contract for   |result and then save to the state
  |price          |
  v               |
-===================   (3) Ask base contract  ======================
+===================   (3) Ask base contract  =====================
 |                 |------------------------->|                   |
 |  std ref proxy  |                          |   std ref basic   |
 |                 |<-------------------------|                   |
-===================         (4) Result       ======================
+===================         (4) Result       =====================
 
 ```
 
