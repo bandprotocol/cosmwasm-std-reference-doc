@@ -8,14 +8,3 @@ pub struct ReferenceData {
     pub last_updated_base: u64,
     pub last_updated_quote: u64,
 }
-
-impl ReferenceData {
-    pub fn new(rate: Uint128, last_updated_base: u64, last_updated_quote: u64) -> Self {
-        ReferenceData {
-            rate: rate,
-            last_updated_base: last_updated_base,
-            last_updated_quote: last_updated_quote,
-        }
-    }
-}
-
