@@ -54,7 +54,7 @@ The code below shows an example of a relatively [simple price database](https://
 
 The contract is able to store exchange rate of any price pair that available on the [std_reference_basic](https://finder.terra.money/tequila-0004/address/terra1vvnnz5g25s04m9tnv8mx9qxxhetsutjl72vpls) contract. For more information on what oracle scripts are and how data requests work on BandChain in general, please see their [wiki](https://github.com/bandprotocol/bandchain/wiki/System-Overview#oracle-data-request) and [developer documentation](https://docs.bandchain.org/dapp-developers/requesting-data-from-bandchain)
 
-### Code Breakdown
+## Code Breakdown
 
 Now we are going to breakdown the [simple price database](https://finder.terra.money/tequila-0004/address/terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0) contract. The contract can be broken down into 4 sections which are `messages`, `state`, `struct types`, `contract logic`.
 
