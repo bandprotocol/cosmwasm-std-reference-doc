@@ -244,6 +244,10 @@ pub fn try_set_price<S: Storage, A: Api, Q: Querier>(
 
 | Contract            |                   Address                    |
 | ------------------- | :------------------------------------------: |
-| std_reference       | terra1vvnnz5g25s04m9tnv8mx9qxxhetsutjl72vpls |
 | std_reference_proxy | terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9 |
-| simple_price_db     | terra1p07j7w8spvgfmgpch4tcumhp97ca9jv56skjl0 |
+
+### Mainnet Columbus-4
+
+| Contract            |                   Address                    |
+| ------------------- | :------------------------------------------: |
+| std_reference_proxy | terra1mwshjfdth2xtpx7gvnwpzhks2clr9z7h9m0e0f |
