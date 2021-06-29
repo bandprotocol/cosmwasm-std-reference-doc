@@ -134,7 +134,7 @@ pub struct ReferenceData {
 
 The full code of contract logic is [here](./simple_price_db/src/contract.rs).
 
-The contract logic can be divided into 4 parts which are `init`, `query`, `cross-contrct query` and `handle`.
+The contract logic can be divided into 4 parts which are `init`, `query`, `cross-contract query` and `handle`.
 
 The `init` part is only used at the contract initialization step. It basically set the owner of the contract and then set the reference of the oracle.
 
@@ -181,7 +181,7 @@ fn query_price<S: Storage, A: Api, Q: Querier>(
 }
 ```
 
-The `cross-contrct query` is only used when handle the message `SavePrice`. It basically send a query message `GetReferenceData` to the oracle contract and then return the struct `ReferenceData`.
+The `cross-contract query` is only used when handle the message `SavePrice`. It basically send a query message `GetReferenceData` to the oracle contract and then return the struct `ReferenceData`.
 
 ```rust
 // cross-contract query
