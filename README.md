@@ -240,11 +240,11 @@ pub fn try_set_price<S: Storage, A: Api, Q: Querier>(
 
 ## List of Band oracle contracts on Terra networks.
 
-### Testnet Tequila-0004
+### Testnet Bombay-011
 
 | Contract            |                   Address                    |
 | ------------------- | :------------------------------------------: |
-| std_reference_proxy | terra16xjp4p3n4e29wgkqhjkxv2xn2q9z7jxzqgsyv9 |
+| std_reference_proxy | terra1jyyp4f8zt30hu2q7p9shhz809nf4036u4fyewh |
 
 ### Mainnet Columbus-4
 
