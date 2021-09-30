@@ -24,14 +24,14 @@ node index.js
 
 #### poc contract address
 
-An Address of the poc std_reference_basic on the testnet Tequila-0004: [terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9](https://finder.terra.money/tequila-0004/address/terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9)
+An Address of the poc std_reference_basic on the testnet Bombay-12: [terra1kzwzdknntsl957vgd8d8ns75hk6h0cm2cg3c79](https://finder.terra.money/bombay-12/address/terra1kzwzdknntsl957vgd8d8ns75hk6h0cm2cg3c79)
 
 ## Handle Message
 
 #### relay message
 
 ```shell=
- terracli tx wasm execute terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9 "{\"relay\":{\"symbols\":[\"BTC\"],\"rates\":[\"56663507549999\"],\"resolve_times\":[1619813336],\"request_ids\":[4435099]}}" --gas auto --gas-prices 1.8ukrw --gas-adjustment 1.4 --chain-id tequila-0004 --node tcp://15.164.0.235:26657 --from <OWNER_ACCOUNT>
+ terrad tx wasm execute terra1kzwzdknntsl957vgd8d8ns75hk6h0cm2cg3c79 "{\"relay\":{\"symbols\":[\"BTC\"],\"rates\":[\"56663507549999\"],\"resolve_times\":[1619813336],\"request_ids\":[4435099]}}" --gas auto --fees <FEES_AMOUNT> --chain-id bombay-12 --node tcp://3.34.163.215:26657 --from <OWNER_ACCOUNT>
 ```
 
 ## Query Message
@@ -39,5 +39,5 @@ An Address of the poc std_reference_basic on the testnet Tequila-0004: [terra1hu
 #### get reference data bulk message
 
 ```shell=
-terracli query wasm contract-store terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9 "{\"get_reference_data_bulk\":{\"base_symbols\":[\"BTC\"], \"quote_symbols\":[\"USD\"]}}" --chain-id tequila-0004 --node tcp://15.164.0.235:26657
+terrad query wasm contract-store terra1kzwzdknntsl957vgd8d8ns75hk6h0cm2cg3c79 "{\"get_reference_data_bulk\":{\"base_symbols\":[\"BTC\"], \"quote_symbols\":[\"USD\"]}}" --chain-id bombay-12 --node tcp://3.34.163.215:26657
 ```
