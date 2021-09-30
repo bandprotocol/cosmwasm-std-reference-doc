@@ -3,8 +3,7 @@ use crate::state::{owner, owner_read, oracle_ref, oracle_ref_read, price, price_
 use crate::struct_types::ReferenceData;
 use cosmwasm_std::{CanonicalAddr, Addr, DepsMut, MessageInfo, Deps, Response};
 use cosmwasm_std::{
-    to_binary, Api, Binary, Env, StdError, StdResult, Storage, WasmQuery, Uint128,
-    entry_point
+    to_binary, Binary, Env, StdError, StdResult, Storage, WasmQuery, Uint128, entry_point
 };
 
 macro_rules! unwrap_query {

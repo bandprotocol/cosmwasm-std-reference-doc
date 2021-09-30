@@ -26,7 +26,7 @@ For the ease of development, the Band Foundation will be maintaining and updatin
 
 ## Retrieving the Price Data
 
-The code below shows an example of a relatively [simple price database](#TODO) contract on Terra which retrieve price data from Band's [std_reference_proxy](https://finder.terra.money/bombay-12/address/terra15jh83xrgxtk4v6kue2gxdp33phrxgdp4rrs8ck) contract and store it in the contract's state. This following diagram shows the working steps of a message `SavePrice` only, which will be explained on the next section.
+The code below shows an example of a relatively [simple price database](https://finder.terra.money/bombay-12/address/terra19wapr8c0v20ca5r67al70fznw0g80rhjj7yrjf) contract on Terra which retrieve price data from Band's [std_reference_proxy](https://finder.terra.money/bombay-12/address/terra15jh83xrgxtk4v6kue2gxdp33phrxgdp4rrs8ck) contract and store it in the contract's state. This following diagram shows the working steps of a message `SavePrice` only, which will be explained on the next section.
 
 ```shell=
        (1) Send message "SavePrice"
@@ -56,7 +56,7 @@ The contract is able to store exchange rate of any price pair that available on 
 
 ## Code Breakdown
 
-Now we are going to breakdown the [simple price database](#TODO) contract. The contract can be broken down into 4 sections which are `messages`, `state`, `struct types`, `contract logic`.
+Now we are going to breakdown the [simple price database](https://finder.terra.money/bombay-12/address/terra19wapr8c0v20ca5r67al70fznw0g80rhjj7yrjf) contract. The contract can be broken down into 4 sections which are `messages`, `state`, `struct types`, `contract logic`.
 
 #### Messages
 
