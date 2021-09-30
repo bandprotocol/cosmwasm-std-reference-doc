@@ -247,8 +247,8 @@ pub fn try_set_price(
 | ------------------- | :------------------------------------------: |
 | std_reference_proxy | [terra15jh83xrgxtk4v6kue2gxdp33phrxgdp4rrs8ck](https://finder.terra.money/bombay-12/address/terra15jh83xrgxtk4v6kue2gxdp33phrxgdp4rrs8ck) |
 
-### Mainnet Columbus-4
+### Mainnet Columbus-5
 
 | Contract            |                   Address                    |
 | ------------------- | :------------------------------------------: |
-| std_reference_proxy | [terra1mwshjfdth2xtpx7gvnwpzhks2clr9z7h9m0e0f](https://finder.terra.money/columbus-4/address/terra1mwshjfdth2xtpx7gvnwpzhks2clr9z7h9m0e0f) |
+| std_reference_proxy | [terra1yq22ls32yzrtplux4j5lrexpy04dx22xv7jdmj](https://finder.terra.money/columbus-5/address/terra1yq22ls32yzrtplux4j5lrexpy04dx22xv7jdmj) |
