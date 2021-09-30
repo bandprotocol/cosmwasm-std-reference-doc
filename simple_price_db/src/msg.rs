@@ -1,16 +1,16 @@
-use cosmwasm_std::HumanAddr;
+use cosmwasm_std::{Addr, CustomQuery};
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
-pub struct InitMsg {
-    pub initial_oracle_ref: HumanAddr,
+pub struct InstantiateMsg {
+    pub initial_oracle_ref: Addr,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 #[serde(rename_all = "snake_case")]
-pub enum HandleMsg {
-    SetOracleRef { new_oracle_ref: HumanAddr },
+pub enum ExecuteMsg {
+    SetOracleRef { new_oracle_ref: Addr },
     SavePrice { symbol: String }
 }
 
@@ -30,3 +30,5 @@ pub enum QueryExtMsg {
         quote_symbol: String,
     }
 }
+
+impl CustomQuery for QueryMsg {}
