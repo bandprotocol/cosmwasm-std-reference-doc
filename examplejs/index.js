@@ -5,20 +5,21 @@ const {
   StdFee,
 } = require("@terra-money/terra.js");
 const axios = require("axios");
+const Qs = require("qs")
 
 // terra constants
-const stdContractAddress = "terra1hurg8ze4tkdy00ppuy7feuse0y2uh0mc9vuwl9";
+const stdContractAddress = "terra1kzwzdknntsl957vgd8d8ns75hk6h0cm2cg3c79";
 const mnemonic = process.env.COSMWASM_DOC_SEED;
 const GAS = 200_000;
 
 // band constants
-const bandUrl = "https://asia-rpc.bandchain.org/oracle/request_prices";
+const bandUrl = "https://laozi1.bandchain.org/api/oracle/v1/request_prices";
 const symbols = ["BTC", "ETH", "BAND"];
 
 // connect to tequila testnet
 const terra = new LCDClient({
-  URL: "https://tequila-lcd.terra.dev",
-  chainID: "tequila-0004",
+  URL: "https://bombay-lcd.terra.dev",
+  chainID: "bombay-12",
 });
 
 // create wallet obj
@@ -28,13 +29,16 @@ const sleep = async (ms) => new Promise((r) => setTimeout(r, ms));
 
 const getPricesFromBand = async () => {
   try {
-    const {
-      data: { result },
-    } = await axios.post(bandUrl, {
-      symbols,
+    const params = {
+      symbols: symbols,
       min_count: 10,
       ask_count: 16,
-    });
+    };
+    const {
+      data: {price_results: result},
+    } = await axios
+        .create({paramsSerializer: params => Qs.stringify(params, {arrayFormat: 'repeat'})})
+        .get(bandUrl, {params});
     return {
       symbols,
       rates: result.map((e) => e["px"] + ""),

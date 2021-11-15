@@ -13,28 +13,28 @@ pub static ORACLE_REF_KEY: &[u8] = b"oracle_ref";
 pub static PRICE_KEY: &[u8] = b"price";
 
 // owner
-pub fn owner<S: Storage>(storage: &mut S) -> Singleton<S, CanonicalAddr> {
+pub fn owner(storage: &mut dyn Storage) -> Singleton<CanonicalAddr> {
     singleton(storage, OWNER_KEY)
 }
 
-pub fn owner_read<S: Storage>(storage: &S) -> ReadonlySingleton<S, CanonicalAddr> {
+pub fn owner_read(storage: &dyn Storage) -> ReadonlySingleton<CanonicalAddr> {
     singleton_read(storage, OWNER_KEY)
 }
 
 // oracle
-pub fn oracle_ref<S: Storage>(storage: &mut S) -> Singleton<S, CanonicalAddr> {
+pub fn oracle_ref(storage: &mut dyn Storage) -> Singleton<CanonicalAddr> {
     singleton(storage, ORACLE_REF_KEY)
 }
 
-pub fn oracle_ref_read<S: Storage>(storage: &S) -> ReadonlySingleton<S, CanonicalAddr> {
+pub fn oracle_ref_read(storage: &dyn Storage) -> ReadonlySingleton<CanonicalAddr> {
     singleton_read(storage, ORACLE_REF_KEY)
 }
 
 // price
-pub fn price<S: Storage>(storage: &mut S) -> PrefixedStorage<S> {
-    PrefixedStorage::new(PRICE_KEY, storage)
+pub fn price(storage: &mut dyn Storage) -> PrefixedStorage {
+    PrefixedStorage::new(storage, PRICE_KEY)
 }
 
-pub fn price_read<S: Storage>(storage: &S) -> ReadonlyPrefixedStorage<S> {
-    ReadonlyPrefixedStorage::new(PRICE_KEY, storage)
+pub fn price_read(storage: &dyn Storage) -> ReadonlyPrefixedStorage {
+    ReadonlyPrefixedStorage::new(storage, PRICE_KEY)
 }
